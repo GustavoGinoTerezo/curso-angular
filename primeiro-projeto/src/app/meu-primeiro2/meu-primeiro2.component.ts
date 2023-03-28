@@ -8,3 +8,6 @@ import { Component } from '@angular/core';
 export class MeuPrimeiro2Component {
 
 }
+
+var n1: any = 'sdfsdf';
+n1 = 4;
