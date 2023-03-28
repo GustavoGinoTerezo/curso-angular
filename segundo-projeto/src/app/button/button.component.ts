@@ -1,7 +1,6 @@
-import { MatButtonModule } from '@angular/material';
+import { Component } from '@angular/core';
 
-
-@MatButtonModule({
+@Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.css']
