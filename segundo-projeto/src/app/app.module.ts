@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//import { ButtonComponent } from './button/button.component';
+import { ButtonComponent } from './button/button.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
@@ -13,7 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
   declarations: [
     AppComponent,
-  //ButtonComponent,
+    ButtonComponent,
     ],
   imports: [
     BrowserModule,
@@ -21,7 +21,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatButtonModule,
     MatMenuModule,
     MatSidenavModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]
