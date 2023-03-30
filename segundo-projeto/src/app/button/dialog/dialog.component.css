@@ -42,6 +42,17 @@
   margin: 5px ;
 }
 
+.fechar{
+  padding: 10px 5px;
+  width: 100px;
+  color: #fff;
+  background-color: rgb(48, 185, 160);
+  border: 1px solid #555;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px ;
+}
+
 .example-full-width {
   width: 100%;
 }
