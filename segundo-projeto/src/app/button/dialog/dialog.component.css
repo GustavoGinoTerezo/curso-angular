@@ -1,0 +1,47 @@
+.voltar {
+  padding: 10px 5px;
+  width: 60px;
+  color: #fff;
+  background-color: rgb(75, 75, 75);
+  border: 1px solid #555;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px ;
+}
+
+.cadastro {
+  padding: 10px 5px;
+  width: 100px;
+  color: #fff;
+  background-color: green;
+  border: 1px solid #555;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px ;
+}
+
+.limpar {
+  padding: 10px 5px;
+  width: 100px;
+  color: #fff;
+  background-color: rgb(107, 0, 0);
+  border: 1px solid #555;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px ;
+}
+
+.atualizar {
+  padding: 10px 5px;
+  width: 100px;
+  color: #fff;
+  background-color: rgb(115, 128, 0);
+  border: 1px solid #555;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px ;
+}
+
+.example-full-width {
+  width: 100%;
+}
