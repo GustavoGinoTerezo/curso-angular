@@ -1,0 +1,10 @@
+<h1 matDialogTitle>Mensagem</h1>
+
+<mat-dialog-content>
+    {{data.name}}
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data">Cancelar</button>
+    <button mat-button (click)="onNoClick()">Salvar</button>
+</mat-dialog-actions>
