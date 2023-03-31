@@ -17,13 +17,13 @@ export class ButtonComponent {
   ){ }
 
   openDialog(): void {
-    let dialogRef = this.dialog.open(DialogComponent, {
+    const dialogRef = this.dialog.open(DialogComponent, {
       data: {nome: this.nome}
     });
     dialogRef.afterClosed().subscribe(result => {
-    this.nome = result.nome;
-    console.log("enviado ------ ", this.nome);
-    });
+      this.nome = result.nome;
+      console.log("enviado ------ ", this.nome);
+      });
   }
 }
 
