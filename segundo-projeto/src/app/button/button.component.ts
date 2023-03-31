@@ -16,11 +16,13 @@ export class ButtonComponent {
     public dialog: MatDialog
   ){ }
 
-  openDialog(nome: string): void {
+  openDialog(): void {
     let dialogRef = this.dialog.open(DialogComponent, {
-      data: {nome: nome}
+      data: {nome: this.nome}
     });
     dialogRef.afterClosed().subscribe(result => {
+    this.nome = result.nome;
+    console.log("enviado ------ ", this.nome);
     });
   }
 }

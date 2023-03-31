@@ -16,7 +16,7 @@ export class TopoComponent {
 
   openDialog(): void {
     const dialogRef = this.mensagem.open(ModalClienteComponent, {
-      data: {name: this.name, animal: this.animal},
+      data: {nome: this.name, animal: this.animal},
       height: '30%',
       width: '50%',
     });
