@@ -1,5 +1,7 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, NgModule } from '@angular/core';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { Injectable } from '@angular/core';
 import axios from 'axios';
 
 @Component({
@@ -9,16 +11,14 @@ import axios from 'axios';
 })
 export class FormFieldComponent {
 
-  nome?: string
+  nome: string = ""
 
   pegarDado(): void {
     axios.get('https://rhuna.herokuapp.com/crud',{
-      params: {
-        ID: 6
-      }
       })
-      .then(function(response){
-        console.log(response);
+      .then(response =>{
+        console.log(response.data);
+        this.nome = response.data.nome;
       })
       .catch(function(error){
       console.log(error);
@@ -27,4 +27,3 @@ export class FormFieldComponent {
       });
   }
 }
-
