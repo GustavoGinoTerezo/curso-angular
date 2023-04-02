@@ -1,7 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, NgModule, OnInit } from '@angular/core';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import { Injectable } from '@angular/core';
+import { Component} from '@angular/core';
 import axios from 'axios';
 
 @Component({
@@ -24,7 +21,9 @@ export class FormFieldComponent {
   //get
   pegarDado(){
     const url = 'https://jsonplaceholder.typicode.com/todos/5'
-    axios.get(url,{ })
+    axios.get(url,{
+      params: {id: this.id}
+    })
       .then(response =>{
         console.log("Recebido", response.data);
       })
@@ -75,8 +74,6 @@ export class FormFieldComponent {
       });
 
   }
-
-
 
 }
 
