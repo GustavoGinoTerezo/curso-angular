@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { Injectable } from '@angular/core';
 import axios from 'axios';
@@ -11,12 +11,16 @@ import axios from 'axios';
 })
 export class FormFieldComponent {
 
-  constructor(private http: HttpClient){}
+
+
+
+
 
   //nome: string = ""
 
+  //get
   pegarDado(){
-    const url = 'https://rhuna.herokuapp.com/crud?id=7'
+    const url = 'https://rhuna.herokuapp.com/crud'
     axios.get(url,{ })
       .then(response =>{
         console.log(response.data);
@@ -31,8 +35,18 @@ export class FormFieldComponent {
 
   //put
   atualizarDado(){
-    const url = 'https://rhuna.herokuapp.com/crud/id';
-    
-  }
 
+    const url = 'https://rhuna.herokuapp.com/crud/id';
+
+    const formData = new FormData();
+
+    const input = document.getElementById('fileinput') as HTMLInputElement;
+
+    if(input.files && input.files.length >0) {
+    formData.append('arquivo', input.files[0]);
+    
+    }
+  }
 }
+
+
