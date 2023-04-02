@@ -11,42 +11,73 @@ import axios from 'axios';
 })
 export class FormFieldComponent {
 
+  id: string = ""
+  nome: string = ""
+  email: string = ""
+  senha: string = ""
+  img!: File;
 
-
-
-
-
-  //nome: string = ""
+  selecionarImagem(event: any): void {
+    this.img = event.target.files;
+  }
 
   //get
   pegarDado(){
-    const url = 'https://rhuna.herokuapp.com/crud'
+    const url = 'https://jsonplaceholder.typicode.com/todos/5'
     axios.get(url,{ })
       .then(response =>{
-        console.log(response.data);
-        //this.nome = response.data.nome;
+        console.log("Recebido", response.data);
       })
       .catch(function(error){
-        console.log(error);
+        console.log("Erro", error);
       })
       .finally(function(){
+      });
+  }
+
+  //post
+  criarDado(){
+
+    const url = 'https://rhuna.herokuapp.com/crud';
+
+    const formData = new FormData();
+      formData.append('id', this.nome )
+      formData.append('title', this.email )
+      //formData.append('senha', this.senha )
+      //formData.append('imagem', this.img);
+
+    axios.post(url, formData)
+      .then(function(response){
+        console.log("Funcionando", response);
+      })
+      .catch(function (error){
+        console.error("Erro", error);
       });
   }
 
   //put
   atualizarDado(){
 
-    const url = 'https://rhuna.herokuapp.com/crud/id';
+    const url = 'https://rhuna.herokuapp.com/crud/6';
 
     const formData = new FormData();
+      formData.append('nome', this.nome )
+      formData.append('email', this.email )
+      formData.append('senha', this.senha )
+      formData.append('imagem', this.img);
 
-    const input = document.getElementById('fileinput') as HTMLInputElement;
+    axios.put(url, formData)
+      .then(response => {
+        console.log ("Resposta recebida", response.data);
+      })
+      .catch(error => {
+        console.error("Erro", error);
+      });
 
-    if(input.files && input.files.length >0) {
-    formData.append('arquivo', input.files[0]);
-    
-    }
   }
+
+
+
 }
 
 
