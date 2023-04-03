@@ -1,5 +1,6 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import axios from 'axios';
+
 
 @Component({
   selector: 'app-form-field',
@@ -20,12 +21,15 @@ export class FormFieldComponent {
 
   //get
   pegarDado(){
-    const url = 'https://jsonplaceholder.typicode.com/todos/5'
+    const url = 'https://rhuna.herokuapp.com/crud'
     axios.get(url,{
       params: {id: this.id}
     })
       .then(response =>{
         console.log("Recebido", response.data);
+        this.nome = response.data.nome;
+        this.email = response.data.email;
+        this.senha = response.data.senha;
       })
       .catch(function(error){
         console.log("Erro", error);
@@ -40,10 +44,10 @@ export class FormFieldComponent {
     const url = 'https://rhuna.herokuapp.com/crud';
 
     const formData = new FormData();
-      formData.append('id', this.nome )
-      formData.append('title', this.email )
-      //formData.append('senha', this.senha )
-      //formData.append('imagem', this.img);
+      formData.append('nome', this.nome )
+      formData.append('email', this.email )
+      formData.append('senha', this.senha )
+      formData.append('imagem', this.img);
 
     axios.post(url, formData)
       .then(function(response){
@@ -72,6 +76,11 @@ export class FormFieldComponent {
       .catch(error => {
         console.error("Erro", error);
       });
+  }
+
+  //delete
+  deletarDado(){
+
 
   }
 
