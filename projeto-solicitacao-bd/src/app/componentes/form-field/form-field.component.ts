@@ -21,7 +21,9 @@ export class FormFieldComponent {
 
   //get
   pegarDado(){
+
     const url = 'https://rhuna.herokuapp.com/crud'
+
     axios.get(url,{
       params: {id: this.id}
     })
@@ -61,7 +63,7 @@ export class FormFieldComponent {
   //put
   atualizarDado(){
 
-    const url = 'https://rhuna.herokuapp.com/crud/6';
+    const url = 'https://rhuna.herokuapp.com/crud';
 
     const formData = new FormData();
       formData.append('nome', this.nome )
@@ -69,7 +71,9 @@ export class FormFieldComponent {
       formData.append('senha', this.senha )
       formData.append('imagem', this.img);
 
-    axios.put(url, formData)
+    axios.put(url, formData, {
+      params: {id: this.id}
+    })
       .then(response => {
         console.log ("Resposta recebida", response.data);
       })
@@ -81,7 +85,17 @@ export class FormFieldComponent {
   //delete
   deletarDado(){
 
+    const url = 'https://rhuna.herokuapp.com/crud/delete';
 
+    axios.delete(url, {
+      params: {id: this.id}
+    })
+    .then(response => {
+      console.log('Dado deletado', response.data);
+    })
+    .catch(error => {
+      console.log('Erro', error);
+    });
   }
 
 }

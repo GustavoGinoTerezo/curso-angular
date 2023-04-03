@@ -20,10 +20,12 @@ export class TopoComponent {
       height: '30%',
       width: '50%',
     });
-    dialogRef.afterClosed().subscribe(result => {
-      this.animal = result.animal;
-      console.log('The dialog was closed');
-      console.log("enviado: --------- ", this.animal, this.name);
-    });
+    dialogRef
+      .afterClosed()
+        .subscribe(result => {
+        this.animal = result.animal;
+        console.log('The dialog was closed');
+        console.log("enviado: --------- ", this.animal, this.name);
+        });
   }
 }
