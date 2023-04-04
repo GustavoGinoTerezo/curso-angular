@@ -64,7 +64,7 @@ export class FormFieldComponent {
   //put
   atualizarDado(){
 
-    const url = "https://rhuna.herokuapp.com/crud";
+    const url = "https://rhuna.herokuapp.com/crud" + this.id;
 
     const formData = new FormData();
       formData.append("nome", this.nome )
@@ -72,9 +72,7 @@ export class FormFieldComponent {
       formData.append("senha", this.senha )
       formData.append("imagem", this.img);
 
-    axios.put(url, formData, {
-      params: {id: this.id}
-    })
+    axios.put(url, formData)
       .then(response => {
         console.log ("Resposta recebida", response.data);
       })
