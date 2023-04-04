@@ -9,10 +9,10 @@ import axios from 'axios';
 })
 export class FormFieldComponent {
 
-  id: string = ""
-  nome: string = ""
-  email: string = ""
-  senha: string = ""
+  id!: string
+  nome!: string
+  email!: string
+  senha!: string
   img!: File;
 
   selecionarImagem(event: any): void {
@@ -21,18 +21,16 @@ export class FormFieldComponent {
 //==================================================================================================================//
 //==================================================================================================================//
   //get
-  pegarDado(){
+  async pegarDado(){
 
-    const url = "https://rhuna.herokuapp.com/crud";
+    const url = "https://jsonplaceholder.typicode.com/posts/" + this.id;
 
-    axios.get(url,{
-      params: {id: this.id}
-    })
+    await axios.get(url)
       .then(response =>{
         console.log("Recebido", response.data);
-        this.nome = response.data.nome;
-        this.email = response.data.email;
-        this.senha = response.data.senha;
+        this.nome = response.data.title;
+        //this.email = response.data.email;
+        //this.senha = response.data.senha;
       })
       .catch(function(error){
         console.log("Erro", error);
@@ -89,11 +87,9 @@ export class FormFieldComponent {
   //delete
   deletarDado(){
 
-    const url = "https://rhuna.herokuapp.com/crud/delete";
+    const url = "https://rhuna.herokuapp.com/crud/delete/" + this.id;
 
-    axios.delete(url, {
-      params: {id: this.id}
-    })
+    axios.delete(url)
     .then(response => {
       console.log("Dado deletado", response.data);
     })
