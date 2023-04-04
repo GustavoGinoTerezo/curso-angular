@@ -23,7 +23,7 @@ export class FormFieldComponent {
   //get
   pegarDado(){
 
-    const url = 'https://rhuna.herokuapp.com/crud'
+    const url = "https://rhuna.herokuapp.com/crud";
 
     axios.get(url,{
       params: {id: this.id}
@@ -45,13 +45,13 @@ export class FormFieldComponent {
   //post
   criarDado(){
 
-    const url = 'https://rhuna.herokuapp.com/crud';
+    const url = "https://rhuna.herokuapp.com/crud";
 
     const formData = new FormData();
-      formData.append('nome', this.nome )
-      formData.append('email', this.email )
-      formData.append('senha', this.senha )
-      formData.append('imagem', this.img);
+      formData.append("nome", this.nome )
+      formData.append("email", this.email )
+      formData.append("senha", this.senha )
+      formData.append("imagem", this.img);
 
     axios.post(url, formData)
       .then(function(response){
@@ -66,13 +66,13 @@ export class FormFieldComponent {
   //put
   atualizarDado(){
 
-    const url = 'https://rhuna.herokuapp.com/crud';
+    const url = "https://rhuna.herokuapp.com/crud";
 
     const formData = new FormData();
-      formData.append('nome', this.nome )
-      formData.append('email', this.email )
-      formData.append('senha', this.senha )
-      formData.append('imagem', this.img);
+      formData.append("nome", this.nome )
+      formData.append("email", this.email )
+      formData.append("senha", this.senha )
+      formData.append("imagem", this.img);
 
     axios.put(url, formData, {
       params: {id: this.id}
@@ -89,16 +89,16 @@ export class FormFieldComponent {
   //delete
   deletarDado(){
 
-    const url = 'https://rhuna.herokuapp.com/crud/delete';
+    const url = "https://rhuna.herokuapp.com/crud/delete";
 
     axios.delete(url, {
       params: {id: this.id}
     })
     .then(response => {
-      console.log('Dado deletado', response.data);
+      console.log("Dado deletado", response.data);
     })
     .catch(error => {
-      console.log('Erro', error);
+      console.log("Erro", error);
     });
   }
 }
