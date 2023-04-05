@@ -16,30 +16,30 @@ export class FormFieldComponent {
   img!: File;
 
   selecionarImagem(event: any): void {
-    this.img = event.target.files;
+    this.img = event.target.files[0];
   }
 
+
+  //url = https://crudcrud.com/api/7dab6c99d39d479e8919652c1a51a6d8/unicorns/
+  //id = 642ccc67308c9903e84ec35a
+
 //==================================================================================================================//
 //==================================================================================================================//
-  //post
+  //post - ok
   async criarDado(){
 
-    const url = "https://crudcrud.com/api/7dab6c99d39d479e8919652c1a51a6d8/unicorns";
+   const url = "https://rhuna.herokuapp.com/crud";
 
-    /* não utilizei pois mudei o método para passar as informações
     const formData = new FormData();
       formData.append("nome", this.nome )
       formData.append("email", this.email )
       formData.append("senha", this.senha )
-      formData.append("imagem", this.img);
-    */
+      formData.append("file", this.img);
 
-    //axios.post(url, formData) => como era
-
-    await axios.post(url, { // = > como ficou
-      nome: this.nome,
-      email: this.email,
-      senha: this.senha
+    await axios.post(url, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
     })
       .then(function(response){
         console.log("Funcionando", response);
@@ -50,22 +50,18 @@ export class FormFieldComponent {
   }
 //==================================================================================================================//
 //==================================================================================================================//
-  //get
+  //get - só dá para pegar a array
   async pegarDado(){
 
-    const url = "https://crudcrud.com/api/7dab6c99d39d479e8919652c1a51a6d8/unicorns/" + this.id;
-    //id = 642ccc67308c9903e84ec35a
+    const url = "https://rhuna.herokuapp.com/crud"
 
     await axios.get(url)
       .then(response =>{
         console.log("Recebido", response.data);
-        this.nome = response.data.nome //usado na API unicorn
+        this.nome = response.data.nome
         this.email = response.data.email
         this.senha =  response.data.senha
-
-        //this.nome = response.data.title; => usado na API do professor
-        //this.email = response.data.email;
-        //this.senha = response.data.senha;
+        this.img = response.data.file
       })
       .catch(function(error){
         console.log("Erro", error);
@@ -75,23 +71,21 @@ export class FormFieldComponent {
   }
 //==================================================================================================================//
 //==================================================================================================================//
-  //put
+  //put - ok
   atualizarDado(){
 
-    const url = "https://crudcrud.com/api/7dab6c99d39d479e8919652c1a51a6d8/unicorns/" + this.id;
+    const url = "https://rhuna.herokuapp.com/crud/" + this.id;
 
-    /*
     const formData = new FormData();
-      formData.append("nome", this.nome )
-      formData.append("email", this.email )
-      formData.append("senha", this.senha )
-      formData.append("imagem", this.img);
-    */
+      formData.append("nome", this.nome)
+      formData.append("email", this.email)
+      formData.append("senha", this.senha)
+      formData.append("file", this.img);
 
-    axios.put(url, {
-      nome: this.nome,
-      email: this.email,
-      senha: this.senha
+    axios.put(url, formData,{
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
     })
       .then(response => {
         console.log ("Resposta recebida", response.data);
@@ -102,10 +96,10 @@ export class FormFieldComponent {
   }
 //==================================================================================================================//
 //==================================================================================================================//
-  //delete
+  //delete - ok
   deletarDado(){
 
-    const url = "https://crudcrud.com/api/7dab6c99d39d479e8919652c1a51a6d8/unicorns/" + this.id;
+    const url = "https://rhuna.herokuapp.com/crud/delete/" + this.id;
 
     axios.delete(url)
     .then(response => {
