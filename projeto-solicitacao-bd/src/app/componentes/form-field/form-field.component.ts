@@ -19,7 +19,6 @@ export class FormFieldComponent {
     this.img = event.target.files[0];
   }
 
-
   //url = https://crudcrud.com/api/7dab6c99d39d479e8919652c1a51a6d8/unicorns/
   //id = 642ccc67308c9903e84ec35a
 
