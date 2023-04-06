@@ -1,0 +1,39 @@
+.example-button-row {
+  margin-left: 13%;
+}
+
+.margem-first{
+  display: 100% ;
+  margin-left: 9%
+  ;
+}
+
+.arquivo-first{
+  display: 100%;
+  margin-left: 7%
+  ;
+}
+
+
+/* ==================================================================== */
+
+.margem-div-third{
+  margin-left: 77%;
+  margin: 1
+}
+
+.botao-third{
+  margin: 0 5px;
+}
+
+.margem-third{
+  display: 100px;
+  margin-left: 77%
+  ;
+}
+
+.arquivo-third{
+  display: 100px;
+  margin-left: 74.5%
+  ;
+}

@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,9 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     HttpClientModule,
     FormsModule,
+    MatTabsModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
