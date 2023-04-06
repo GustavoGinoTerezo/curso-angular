@@ -12,6 +12,10 @@ export class TableComponent {
   nome!: string
   email!: string
   senha!: string
+  idPesquisar!: string
+  nomePesquisar!: string
+  emailPesquisar!: string
+  senhaPesquisar!: string
   img!: File;
 
   selecionarImagem(event: any): void {
@@ -55,10 +59,13 @@ export class TableComponent {
     await axios.get(url)
       .then(response =>{
         console.log("Recebido", response.data);
-        this.nome = response.data.nome
-        this.email = response.data.email
-        this.senha =  response.data.senha
-        this.img = response.data.file
+
+        let lista = response.data.length
+        this.idPesquisar = response.data[lista - 1].id
+        this.nomePesquisar = response.data[lista - 1].nome
+        this.emailPesquisar = response.data[lista - 1].email
+        this.senhaPesquisar =  response.data[lista - 1].senha
+        this.img = response.data[lista - 1].file
       })
       .catch(function(error){
         console.log("Erro", error);
