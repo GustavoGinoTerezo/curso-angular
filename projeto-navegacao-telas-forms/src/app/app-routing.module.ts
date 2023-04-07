@@ -4,6 +4,7 @@ import { FormCadastroComponent } from './componentes/form-cadastro/form-cadastro
 import { CardsComponent } from './componentes/cards/cards.component';
 
 const routes: Routes = [
+  {path: '', component: FormCadastroComponent},
   {path: 'card', component: CardsComponent}
 ];
 
