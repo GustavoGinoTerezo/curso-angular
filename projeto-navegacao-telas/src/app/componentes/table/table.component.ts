@@ -22,6 +22,7 @@ export class TableComponent {
     this.img = event.target.files[0];
   }
 
+  
 //==================================================================================================================//
 //==================================================================================================================//
 
@@ -52,7 +53,7 @@ export class TableComponent {
    //==================================================================================================================//
 //==================================================================================================================//
   //get - só dá para pegar a array
-  async pegarDado(){
+  public async pegarDado(){
 
     const url = "https://rhuna.herokuapp.com/crud"
 
@@ -65,7 +66,6 @@ export class TableComponent {
         this.nomePesquisar = response.data[lista - 1].nome
         this.emailPesquisar = response.data[lista - 1].email
         this.senhaPesquisar =  response.data[lista - 1].senha
-        this.img = response.data[lista - 1].file
       })
       .catch(function(error){
         console.log("Erro", error);

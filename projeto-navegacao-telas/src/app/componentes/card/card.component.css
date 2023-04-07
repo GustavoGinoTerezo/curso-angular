@@ -1,0 +1,13 @@
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Define o espaçamento entre as imagens */
+}
+
+.image-container img {
+  margin-top: 20px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+}

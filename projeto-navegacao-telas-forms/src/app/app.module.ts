@@ -4,8 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TableComponent } from './componentes/table/table.component';
-import { CardComponent } from './componentes/card/card.component';
+import { FormCadastroComponent } from './componentes/form-cadastro/form-cadastro.component';
+import { CardsComponent } from './componentes/cards/cards.component';
+import { FormGerenciamentoComponent } from './componentes/form-gerenciamento/form-gerenciamento.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -18,8 +19,9 @@ import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent,
-    CardComponent
+    FormCadastroComponent,
+    CardsComponent,
+    FormGerenciamentoComponent
   ],
   imports: [
     BrowserModule,
