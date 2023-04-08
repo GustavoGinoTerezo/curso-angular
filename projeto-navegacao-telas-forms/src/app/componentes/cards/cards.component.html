@@ -14,10 +14,11 @@
 </mat-toolbar>
 <!--==========================================================================================================================-->
 <!--==========================================================================================================================-->
-<!--CARD-->
+<!--CARDS-->
+<!--CARD 1-->
 <div class="image-container">
 <mat-card class="example-card">
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <img mat-card-image [src]="imgUrl" class="img">
 <br>
   <mat-card-content>
     <p>
@@ -35,18 +36,19 @@
   </mat-card-actions>
 </mat-card>
 
+<!--CARD 2-->
 <mat-card class="example-card">
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <img mat-card-image [src]="imgUrl1" class="img">
 <br>
   <mat-card-content>
     <p>
-      id : {{id}}
+      id : {{id1}}
       <br>
-      Nome : {{nome}}
+      Nome : {{nome1}}
       <br>
-      Email : {{email}}
+      Email : {{email1}}
       <br>
-      Senha : {{senha}}
+      Senha : {{senha1}}
     </p>
   </mat-card-content>
   <mat-card-actions>
@@ -54,18 +56,19 @@
   </mat-card-actions>
 </mat-card>
 
+<!--CARD 3-->
 <mat-card class="example-card">
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <img mat-card-image [src]="imgUrl2" class="img">
 <br>
   <mat-card-content>
     <p>
-      id : {{id}}
+      id : {{id2}}
       <br>
-      Nome : {{nome}}
+      Nome : {{nome2}}
       <br>
-      Email : {{email}}
+      Email : {{email2}}
       <br>
-      Senha : {{senha}}
+      Senha : {{senha2}}
     </p>
   </mat-card-content>
   <mat-card-actions>

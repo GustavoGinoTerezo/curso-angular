@@ -42,21 +42,21 @@ export class FormGerenciamentoComponent {
 
     const url = "https://rhuna.herokuapp.com/crud"
 
-    // await axios.get(url)
-    //   .then(response =>{
-    //     let lista = response.data.length
-    //     console.log("Recebido", response.data);
-    //     this.id = response.data[lista - 1].id
-    //     this.nome = response.data[lista - 1].nome
-    //     this.email = response.data[lista - 1].email
-    //     this.senha =  response.data[lista - 1].senha
-    //     this.img = response.data[lista - 1].file
-    //   })
-    //   .catch(function(error){
-    //     console.log("Erro", error);
-    //   })
-    //   .finally(function(){
-    //   });
+    await axios.get(url)
+      .then(response =>{
+        let lista = response.data.length
+        console.log("Recebido", response.data);
+        this.id = response.data[lista - 1].id
+        this.nome = response.data[lista - 1].nome
+        this.email = response.data[lista - 1].email
+        this.senha =  response.data[lista - 1].senha
+        this.img = response.data[lista - 1].file
+      })
+      .catch(function(error){
+        console.log("Erro", error);
+      })
+      .finally(function(){
+      });
   }
 //==================================================================================================================//
 //==================================================================================================================//
@@ -71,17 +71,17 @@ export class FormGerenciamentoComponent {
       formData.append("senha", this.senha)
       formData.append("file", this.img);
 
-    // axios.put(url, formData,{
-    //   headers: {
-    //     'Content-Type': 'multipart/form-data'
-    //   }
-    // })
-    //   .then(response => {
-    //     console.log ("Resposta recebida", response.data);
-    //   })
-    //   .catch(error => {
-    //     console.error("Erro", error);
-    //   });
+    axios.put(url, formData,{
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+      .then(response => {
+        console.log ("Resposta recebida", response.data);
+      })
+      .catch(error => {
+        console.error("Erro", error);
+      });
   }
 //==================================================================================================================//
 //==================================================================================================================//

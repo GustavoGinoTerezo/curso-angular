@@ -49,16 +49,16 @@ export class FormCadastroComponent {
        formData.append("senha", this.senha )
        formData.append("file", this.img);
 
-    //  await axios.post(url, formData, {
-    //    headers: {
-    //      'Content-Type': 'multipart/form-data'
-    //    }
-    //  })
-    //    .then(function(response){
-    //      console.log("Funcionando", response);
-    //    })
-    //    .catch(function (error){
-    //      console.error("Erro", error);
-    //    });
+     await axios.post(url, formData, {
+       headers: {
+         'Content-Type': 'multipart/form-data'
+       }
+     })
+       .then(function(response){
+         console.log("Funcionando", response);
+       })
+       .catch(function (error){
+         console.error("Erro", error);
+       });
    }
 }

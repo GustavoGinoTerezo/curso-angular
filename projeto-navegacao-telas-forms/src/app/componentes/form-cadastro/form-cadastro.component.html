@@ -31,7 +31,7 @@
 <br>
 <mat-form-field appearance="fill" class="inputs">
   <mat-label>Escreva sua senha</mat-label>
-  <input matInput [type]="hide ? 'password' : 'text'">
+  <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="senha">
   <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
   </button>
@@ -46,10 +46,7 @@
 <section>
 <br>
   <div class="example-button-row">
-    <!--<button mat-stroked-button (click)="pegarDado()">Pesquisar</button>-->
     <button mat-raised-button color="primary" (click)="criarDado()" class="botao">Cadastrar</button>
-    <!--<button mat-stroked-button color="warn" (click)="atualizarDado()">Atualizar</button>-->
-    <!--<button mat-stroked-button color="accent" (click)="deletarDado()">Excluir</button>-->
   </div>
 </section>
 </div>
