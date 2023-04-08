@@ -1,6 +1,16 @@
-.botao-centralizado {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.example-card {
+  max-width: 300px;
+  margin: 5%;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Define o espaçamento entre as imagens */
+}
+
+.botao{
+  flex: 1 1 auto;
+  width: 100%;
 }

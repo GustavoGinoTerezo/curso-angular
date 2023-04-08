@@ -1,0 +1,26 @@
+.cor-do-formulario{
+  border: 2px solid rgb(133, 133, 133);
+  background-color: rgb(133, 133, 133);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 5%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.botaoPesquisar{
+  border-radius: 10px;
+  padding: 20px;
+  margin-left: 30%;
+}
+
+.botaoAtualizar{
+  border-radius: 10px;
+  padding: 20px;
+  margin-left: 15px;
+}
+
+.inputs{
+  flex: 1 1 auto;
+  width: 100%;
+}

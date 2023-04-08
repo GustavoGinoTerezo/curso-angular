@@ -20,8 +20,11 @@ export class FormCadastroComponent {
     this.router.navigate(['/card'])
   }
 
+  irParaGerenciamento(){
+    this.mostrarTelaAtual = false;
+    this.router.navigate(['/gerenciamento'])
+  }
 
-  id!: string
   nome!: string
   email!: string
   senha!: string

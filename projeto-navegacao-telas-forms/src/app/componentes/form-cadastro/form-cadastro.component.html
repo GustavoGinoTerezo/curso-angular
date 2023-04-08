@@ -6,7 +6,7 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"[matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>Gerenciamento de cadastro</button>
+      <button mat-menu-item (click)="irParaGerenciamento()">Gerenciamento de Cadastro</button>
       <button mat-menu-item (click)="irParaCard()">Cards</button>
     </mat-menu>
   </button>
