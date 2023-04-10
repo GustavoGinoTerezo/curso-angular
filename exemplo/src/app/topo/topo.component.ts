@@ -28,4 +28,8 @@ export class TopoComponent {
         console.log("enviado: --------- ", this.animal, this.name);
         });
   }
+
+  outrometodo(){
+    this.name = "maria"
+  }
 }
