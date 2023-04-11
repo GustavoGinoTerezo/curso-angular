@@ -1,0 +1,58 @@
+.example-card {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.img{
+  width: 300px;
+  height: 250px;
+}
+
+.inputs{
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.cor-do-formulario{
+  border: 2px solid rgb(133, 133, 133);
+  background-color: rgb(133, 133, 133);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.img{
+  width: 400px;
+  height: 250px;
+}
+
+.botaoPesquisar{
+  border-radius: 10px;
+  padding: 20px;
+  margin-left: 30%;
+}
+
+.botaoCadastrar{
+  border-radius: 10px;
+  padding: 20px;
+  margin-left: 10%;
+}
+
+.descricao{
+  margin-left: 2%;
+}
+
+.botaoDeletar{
+  border-radius: 10px;
+  padding: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  margin-bottom: 2%;
+}
+
+.centralizar{
+  margin: 0 auto; /* Define margens automáticas para centralizar a div */
+}
